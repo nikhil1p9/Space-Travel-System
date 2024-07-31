@@ -14,11 +14,12 @@ extern map<int, Commander> commanders;
 void createTravellers()
 {
     string name = "Pass";
-    for(int i = 0; i < 13; i++)
+    for(int i = 0; i < 10; i++) // any number of travellers can be created
     {
-        name += (char)(i + 48);
+        string temp =to_string(i);
+        name += temp;
         Passenger pass(name);
-        name.erase(name.size() - 1);
+        name.erase(name.size() - temp.size()-1, temp.size());
     }
     Astronaut a0(30, "Astro1", 1454);  // ID = 14
     Astronaut a1(23, "Astro2", 4645);  // ID = 15
